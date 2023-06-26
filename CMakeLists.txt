@@ -3,9 +3,6 @@ cmake_minimum_required(VERSION 3.11)
 project(Radio CXX)
 set(CMAKE_CXX_STANDARD 20)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 # Ищем Boost версии 1.78
 find_package(Boost 1.78.0 REQUIRED)
 if(Boost_FOUND)
@@ -21,5 +18,6 @@ if(WIN32)
   add_definitions(-DNOMINMAX)
 endif()
 
-add_executable(radio src/main.cpp src/audio.h)
+include_directories(${CMAKE_INCLUDE_PATH})
+add_executable(radio src/main.cpp src/audio.hpp)
 target_link_libraries(radio PRIVATE Threads::Threads)

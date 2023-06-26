@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/eoanermine/practicum/radio/build/CMakePresets.json"
+    ]
+}
